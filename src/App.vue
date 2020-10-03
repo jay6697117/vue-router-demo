@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link :to="{name: 'Home'}">Home</router-link>
+      <router-link :to="{ name: 'Home' }" class="rl-app">Home</router-link>
     </div>
-    <router-view />
+    <router-view class="rv-app"></router-view>
   </div>
 </template>
 

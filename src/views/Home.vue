@@ -2,8 +2,8 @@
   <div>
     I am Home...
     <div>
-      <router-link :to="{name: 'Hi'}">Hi</router-link>
-      <router-view></router-view>
+      <router-link :to="{ name: 'Hi' }" class="rl-home">Hi</router-link>
+      <router-view class="rv-home"></router-view>
     </div>
   </div>
 </template>
