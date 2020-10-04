@@ -1,15 +1,12 @@
 <template>
   <div>
-    <div>
-      I am Hi
-    </div>
-    <router-view class="rv-hi"></router-view>
+    I am Home
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Hi'
+  name: 'Home'
 };
 </script>
 
