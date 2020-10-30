@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link :to="{ name: 'Home' }" class="rl-app">Home首页</router-link>
       &nbsp;|&nbsp;
       <router-link :to="{ name: 'Hi' }" class="rl-app">Hi页面</router-link>
@@ -8,10 +8,15 @@
       <router-link :to="{ name: 'Hi1' }" class="rl-app">Hi1页面</router-link>
       &nbsp;|&nbsp;
       <router-link :to="{ name: 'Hi2' }" class="rl-app">Hi2页面</router-link>
-    </div>
+    </div> -->
     <router-view class="rv-app"></router-view>
   </div>
 </template>
+<script>
+export default {
+  name: 'App'
+};
+</script>
 
 <style lang="less">
 #app {
