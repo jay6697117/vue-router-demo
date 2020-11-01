@@ -12,7 +12,7 @@
     <div><button @click="showIn = true">调起键盘</button></div>
     <div><vehicle-keyboard v-model="showIn" /></div>
     <h4>$route.name: {{ $route.name }}</h4>
-    <button @click="$router.go(-1);" style="position: fixed;top:15px;left: 15px;">后退</button>
+    <button @click="$router.go(-1)" style="position: fixed;top:15px;left: 15px;">后退</button>
   </div>
   <!-- </transition> -->
 </template>

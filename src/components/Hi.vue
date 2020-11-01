@@ -4,7 +4,7 @@
     <div>{{ routesInfo }}</div>
     <br />
     <!-- <div><button @click="$router.push({ name: 'Home' })">跳转Home</button></div> -->
-        <div><button @click="$router.push('/')">跳转Home</button></div>
+    <div><button @click="$router.push('/')">跳转Home</button></div>
     <br />
     <div><button @click="$router.push({ name: 'Hi1', params: { id: 1 } })">跳转子路由Hi1</button></div>
     <br />
@@ -15,7 +15,7 @@
       <router-view name="left" style="width:80%;background-color:#0cc;height:300px;" />
       <router-view name="right" style="width:80%;background-color:#c0c;height:300px;" />
     </div>
-    <button @click="$router.go(-1);" style="position: fixed;top:15px;left: 15px;">后退</button>
+    <button @click="$router.go(-1)" style="position: fixed;top:15px;left: 15px;">后退</button>
   </div>
   <!-- </transition> -->
 </template>
