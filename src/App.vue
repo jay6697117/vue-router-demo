@@ -1,15 +1,8 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link :to="{ name: 'Home' }" class="rl-app">Home首页</router-link>
-      &nbsp;|&nbsp;
-      <router-link :to="{ name: 'Hi' }" class="rl-app">Hi页面</router-link>
-      &nbsp;|&nbsp;
-      <router-link :to="{ name: 'Hi1' }" class="rl-app">Hi1页面</router-link>
-      &nbsp;|&nbsp;
-      <router-link :to="{ name: 'Hi2' }" class="rl-app">Hi2页面</router-link>
-    </div> -->
-    <router-view class="rv-app"></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view class="rv-home" style="background-color:#ccc;padding:10px;" />
+    </transition>
   </div>
 </template>
 <script>
@@ -29,7 +22,6 @@ export default {
 
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
@@ -38,5 +30,19 @@ export default {
       color: #42b983;
     }
   }
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: opacity .5s ease;
+}
+.fade-leave-active {
+  opacity: 0;
+  transition: opacity .5s ease;
 }
 </style>

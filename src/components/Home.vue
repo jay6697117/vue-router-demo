@@ -1,23 +1,29 @@
 <template>
+  <!-- <transition name="fade" mode="out-in"> -->
   <div>
-    <h1>{{ routesInfo }}</h1>
-    <button @click="$router.push({ name: 'Hi' })">跳转Hi</button>
-    <button @click="showIn = true">调起键盘</button>
-    <div>
-      <vehicle-keyboard v-model="showIn" />
-    </div>
+    <h4>routesInfo: {{ routesInfo }}</h4>
+    <div><button @click="$router.push({ name: 'Home' })">跳转Home</button></div>
+    <br />
+    <div><button @click="$router.push({ name: 'Hi' })">跳转Hi</button></div>
+    <br />
+    <div><button @click="$router.push({ path: '/unknown' })">跳转Unknown</button></div>
+    <br />
+    <div><button @click="showIn = true">调起键盘</button></div>
+    <div><vehicle-keyboard v-model="showIn" /></div>
+    <h4>$route.name: {{ $route.name }}</h4>
   </div>
+  <!-- </transition> -->
 </template>
 
 <script>
 import VehicleKeyboard from '@/components/VehicleKeyboard.vue';
 
 export default {
-  name: 'Home01',
+  name: 'Home',
   title: 'lalala',
   data() {
     return {
-      showIn:false
+      showIn: false
     };
   },
   components: {
@@ -46,4 +52,18 @@ export default {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+// .fade-enter {
+//   opacity: 0;
+// }
+// .fade-leave {
+//   opacity: 1;
+// }
+// .fade-enter-active {
+//   transition: opacity .5 ease;
+// }
+// .fade-leave-active {
+//   opacity: 0;
+//   transition: opacity .5s ease;
+// }
+</style>

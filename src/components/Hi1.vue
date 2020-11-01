@@ -1,15 +1,17 @@
 <template>
-  <div class="hi1">hi1:{{ routesInfo1 }}</div>
+  <div class="hi1">
+    <h4>hi1 routes: {{ routesInfo1 }}</h4>
+    <div>$route.params: {{ $route.params }}</div>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Hi1',
   data() {
-    return {
-    };
+    return {};
   },
-    computed: {
+  computed: {
     routesInfo1() {
       const { fullPath, path, name, params, query, meta } = this.$route;
       const obj = {
@@ -22,7 +24,10 @@ export default {
       };
       return obj;
     }
-  }
+  },
+  created() {
+    console.log('this.$route.params :>> ', this.$route.params);
+  },
 };
 </script>
 
