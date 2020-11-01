@@ -23,6 +23,11 @@ const routes = [
     path: '/hi/:id',
     name: 'Hi',
     component: Hi,
+    beforeEnter: (to, from, next) => {
+      console.log('routes to :>> ', to);
+      console.log('routes from :>> ', from);
+      next();
+    },
     children: [
       {
         path: '/hi/1',
@@ -30,7 +35,7 @@ const routes = [
         components: {
           default: Hi,
           left: Hi1,
-          right: Hi2
+          // right: Hi2
         }
       },
       {
@@ -38,7 +43,7 @@ const routes = [
         name: 'Hi2',
         components: {
           default: Hi,
-          left: Hi1,
+          // left: Hi1,
           right: Hi2
         }
       }

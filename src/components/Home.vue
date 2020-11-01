@@ -2,7 +2,8 @@
   <!-- <transition name="fade" mode="out-in"> -->
   <div>
     <h4>routesInfo: {{ routesInfo }}</h4>
-    <div><button @click="$router.push({ name: 'Home' })">跳转Home</button></div>
+    <!-- <div><button @click="$router.push({ name: 'Home' })">跳转Home</button></div> -->
+    <div><button @click="$router.push('/')">跳转Home</button></div>
     <br />
     <div><button @click="$router.push({ name: 'Hi' })">跳转Hi</button></div>
     <br />
@@ -11,6 +12,7 @@
     <div><button @click="showIn = true">调起键盘</button></div>
     <div><vehicle-keyboard v-model="showIn" /></div>
     <h4>$route.name: {{ $route.name }}</h4>
+    <button @click="$router.go(-1);" style="position: fixed;top:15px;left: 15px;">后退</button>
   </div>
   <!-- </transition> -->
 </template>

@@ -1,7 +1,9 @@
 <template>
   <div class="hi2">
+    <br />
+    <div><button @click="$router.push({ name: 'Hi' })">跳转Hi</button></div>
     <h4>hi2 routes: {{ routesInfo2 }}</h4>
-    <div>$route.params: {{ $route.params }}</div>
+    <div>Hi2 $route.params: {{ $route.params }}</div>
   </div>
 </template>
 
@@ -26,8 +28,18 @@ export default {
     }
   },
   created() {
-    console.log('this.$route.params :>> ', this.$route.params);
+    console.log('Hi2 this.$route.params :>> ', this.$route.params);
   },
+  beforeRouteEnter(to, from, next) {
+    console.log('Hi2 RouteEnter to :>> ', to);
+    console.log('Hi2 RouteEnter from :>> ', from);
+    next();
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log('Hi2 RouteLeave to :>> ', to);
+    console.log('Hi2 RouteLeave from :>> ', from);
+    next();
+  }
 };
 </script>
 
