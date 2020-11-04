@@ -17,15 +17,20 @@ const routes = [
   {
     path: '/hi',
     name: 'Hi',
-    component: Hi
+    component: Hi,
+    beforeEnter: (to, from, next) => {
+      console.log('routes to 000:>> ', to);
+      console.log('routes from 000:>> ', from);
+      next();
+    }
   },
   {
     path: '/hi/:id',
     name: 'Hi',
     component: Hi,
     beforeEnter: (to, from, next) => {
-      console.log('routes to :>> ', to);
-      console.log('routes from :>> ', from);
+      console.log('routes to 001:>> ', to);
+      console.log('routes from 001:>> ', from);
       next();
     },
     children: [
@@ -34,7 +39,7 @@ const routes = [
         name: 'Hi1',
         components: {
           default: Hi,
-          left: Hi1,
+          left: Hi1
           // right: Hi2
         }
       },
