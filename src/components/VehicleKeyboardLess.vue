@@ -215,36 +215,29 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-$namespace: 'vehicle-keyboard';
-$keyboard-zIndex: 5000;
-$keyboard-distence: 6px;
-$keyboard-font_size: 16px;
-$keyboard-line_height: 2.4;
-$keyboard-border-radius: 3px;
-
-.#{$namespace}__wrap {
+<style lang="less" scoped>
+.vehicle-keyboard__wrap {
   position: relative;
 }
 
-.#{$namespace}__mask {
+.vehicle-keyboard__mask {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: $keyboard-zIndex;
+  z-index: 5000;
 }
 
-.#{$namespace} {
+.vehicle-keyboard {
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: $keyboard-zIndex + 5;
+  z-index: 5000 + 5;
   width: 100%;
   backface-visibility: hidden;
-  font-size: $keyboard-font_size;
-  line-height: $keyboard-line_height;
+  font-size: 16px;
+  line-height: 2.4;
   text-align: center;
 
   > * {
@@ -255,43 +248,40 @@ $keyboard-border-radius: 3px;
 // -------------------
 // 预览区
 // -------------------
-.#{$namespace}__view {
-  $height: 44px;
+.vehicle-keyboard__view {
   position: relative;
   display: flex;
   width: 100%;
-  height: $height;
-  padding: $keyboard-distence;
+  height: 44px;
+  padding: 6px;
   background: #fff;
   align-items: center;
   font-size: 14px;
 
   &::before {
-    $color: #e5e5e5;
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 1px;
-    border-top: 1px solid $color;
-    color: $color;
+    border-top: 1px solid #e5e5e5;
+    color: #e5e5e5;
     transform-origin: 0 100%;
     transform: scaleY(0.5);
   }
 }
 
-.#{$namespace}__energy {
+.vehicle-keyboard__energy {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .toggle {
-    $size: 18px;
-    width: $size;
-    height: $size;
-    margin-right: $keyboard-distence / 3;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px / 3;
 
     path {
       fill: #333;
@@ -299,23 +289,22 @@ $keyboard-border-radius: 3px;
   }
 
   &.checked {
-    $color: #89c649;
-    color: $color;
+    color: #89c649;
 
     .toggle path {
-      fill: $color;
+      fill: #89c649;
     }
   }
 }
 
-.#{$namespace}__vehicle {
+.vehicle-keyboard__vehicle {
   flex: 1;
   display: flex;
   height: 100%;
   margin: 0 6px;
 }
 
-.#{$namespace}__done {
+.vehicle-keyboard__done {
   width: 34px;
   // opacity: 0.5;
 
@@ -325,7 +314,7 @@ $keyboard-border-radius: 3px;
   // }
 }
 
-.#{$namespace}__num {
+.vehicle-keyboard__num {
   flex: 1;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
@@ -343,43 +332,37 @@ $keyboard-border-radius: 3px;
 // 主键盘区
 // -------------------
 
-.#{$namespace}__board {
+.vehicle-keyboard__board {
   width: 100%;
-  padding: $keyboard-distence;
+  padding: 6px;
   background: #eee;
 }
 
-.#{$namespace}__row {
+.vehicle-keyboard__row {
   display: flex;
   width: 100%;
 
   & + & {
-    margin-top: $keyboard-distence;
+    margin-top: 6px;
   }
 }
 
-.#{$namespace}__col {
-  $width: '(100% - #{$keyboard-distence} * 9) / 10';
-  flex: 0 0 calc(#{$width});
+.vehicle-keyboard__col {
+  flex: 0 0 calc((100% - 6px * 9) / 10);
   background: #fff;
-  border-radius: $keyboard-border_radius;
+  border-radius: 3px;
   overflow: hidden;
 
   & + & {
-    margin-left: $keyboard-distence;
+    margin-left: 6px;
   }
 
   // 最后一个按键
   &.delkey {
-    $keyboard-distence-delkey: $keyboard-distence * 2;
-    flex: 0 0 calc(#{$width} * 3 + #{$keyboard-distence-delkey});
-    // background: #abb2bb;
-
+    flex: 0 0 calc((100% - 6px * 9) / 10 * 3 + 6px * 2);
+    background: #c3c8d0;
     // 浮动右侧
-    &.float-end {
-      $keyboard-distence-delkey: $keyboard-distence * 6;
-      margin-left: calc(#{$width} * 5 + #{$keyboard-distence-delkey});
-    }
+    margin-left: calc((100% - 6px * 9) / 10 * 5 + 6px * 6);
   }
 
   &:active {
@@ -412,7 +395,7 @@ $keyboard-border-radius: 3px;
 }
 
 .slide-in-leave-active {
-  @extend .slide-in-enter-active;
+  &:extend(.slide-in-enter-active);
   animation-direction: reverse;
 }
 

@@ -9,8 +9,11 @@
     <br />
     <div><button @click="$router.push({ path: '/unknown' })">跳转Unknown</button></div>
     <br />
-    <div><button @click="showIn = true">调起键盘</button></div>
-    <div><vehicle-keyboard v-model="showIn" /></div>
+    <div><button @click="showInLess = true">调起键盘less</button></div>
+    <div><vehicle-keyboard-less v-model="showInLess" /></div>
+    <br />
+    <div><button @click="showInScss = true">调起键盘scss</button></div>
+    <div><vehicle-keyboard-scss v-model="showInScss" /></div>
     <h4>$route.name: {{ $route.name }}</h4>
     <button @click="$router.go(-1)" style="position: fixed;top:15px;left: 15px;">后退</button>
   </div>
@@ -18,18 +21,21 @@
 </template>
 
 <script>
-import VehicleKeyboard from '@/components/VehicleKeyboard.vue';
+import VehicleKeyboardLess from '@/components/VehicleKeyboardLess.vue';
+import VehicleKeyboardScss from '@/components/VehicleKeyboardScss.vue';
 
 export default {
   name: 'Home',
   title: 'lalala',
   data() {
     return {
-      showIn: false
+      showInLess: false,
+      showInScss: false
     };
   },
   components: {
-    VehicleKeyboard
+    VehicleKeyboardLess,
+    VehicleKeyboardScss
   },
   computed: {
     routesInfo() {
