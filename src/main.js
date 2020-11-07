@@ -5,6 +5,7 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+//测试gitlens
 new Vue({
   router,
   store,
